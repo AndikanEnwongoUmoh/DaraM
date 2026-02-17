@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DaraM Enterprises - Professional Graphics Design Services &amp; Digital Skills Training in Uyo, Akwa Ibom, Nigeria. Master Photoshop, Figma, Canva &amp; Freelancing. Turn passion into profit today!">
+    <meta property="og:title" content="DaraM Enterprises | Graphics Design &amp; Freelance Training in Uyo">
+    <meta property="og:description" content="Hands-on training &amp; premium design services. Empowering Nigerian creatives to earn in dollars.">
+    <meta property="og:image" content="https://picsum.photos/id/1015/1200/630">
+    <meta property="og:url" content="https://daram.ng">
+    <title>DaraM Enterprises | Graphics Design &amp; Digital Skills Training</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap');
+        .hero-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.75)), url('https://picsum.photos/id/1015/2000/1200');
+            background-size: cover;
+            background-position: center;
+        }
+        .portfolio-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .portfolio-card:hover {
+            transform: translateY(-12px) scale(1.03);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: rgb(99 102 241);
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        .service-icon {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover .service-icon {
+            transform: scale(1.15) rotate(6deg);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans antialiased">
+    <!-- Tailwind Script -->
+    <script>
+        tailwind.config = {
+            content: [],
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- NAVBAR -->
+    <nav class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50 backdrop-blur-lg" x-data="{ mobileOpen: false }">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center gap-x-3">
+                    <div class="w-9 h-9 bg-gradient-to-br from-indigo-600 to-emerald-500 rounded-2xl flex items-center justify-center text-white font-bold text-3xl leading-none pt-0.5">D</div>
+                    <div>
+                        <span class="font-bold text-3xl tracking-tighter">DaraM</span>
+                        <span class="font-medium text-emerald-500 text-xl">Enterprises</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
+                    <a href="#home" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="nav-link hover:text-indigo-600 transition-colors">Home</a>
+                    <a href="#about" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="nav-link hover:text-indigo-600 transition-colors">About</a>
+                    <a href="#services" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="nav-link hover:text-indigo-600 transition-colors">Services</a>
+                    <a href="#portfolio" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="nav-link hover:text-indigo-600 transition-colors">Portfolio</a>
+                    <a href="#training" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="nav-link hover:text-indigo-600 transition-colors">Training</a>
+                    <a href="#contact" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="nav-link hover:text-indigo-600 transition-colors">Contact</a>
+                </div>
+
+                <div class="flex items-center gap-x-4">
+                    <a href="https://wa.me/234811098393?text=Hello%20DaraM%2C%20I%27m%20interested%20in%20your%20services%21" target="_blank"
+                       class="hidden md:flex items-center gap-x-2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-3xl text-sm font-semibold transition-all shadow-lg shadow-emerald-500/30">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 8a2 2 0 01-2 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V10a2 2 0 012-2" />
+                        </svg>
+                        WhatsApp
+                    </a>
+
+                    <!-- Mobile Hamburger -->
+                    <button @click="mobileOpen = !mobileOpen" class="md:hidden p-2 text-slate-700 dark:text-slate-300">
+                        <svg x-show="!mobileOpen" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.25" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                        <svg x-show="mobileOpen" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.25" d="M6 18L18 6M6 6h12v12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" x-show="mobileOpen" class="md:hidden bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-8">
+            <div class="max-w-7xl mx-auto px-6 flex flex-col gap-y-8 text-lg font-medium">
+                <a href="#home" @click="mobileOpen = false" class="py-2">Home</a>
+                <a href="#about" @click="mobileOpen = false" class="py-2">About Us</a>
+                <a href="#services" @click="mobileOpen = false" class="py-2">Services</a>
+                <a href="#portfolio" @click="mobileOpen = false" class="py-2">Portfolio</a>
+                <a href="#training" @click="mobileOpen = false" class="py-2">Training Programs</a>
+                <a href="#contact" @click="mobileOpen = false" class="py-2">Contact</a>
+                <a href="https://wa.me/2349012345678?text=Hello%20DaraM%2C%20I%27d%20like%20to%20enroll%21" target="_blank"
+                   class="bg-emerald-600 text-white text-center py-5 rounded-3xl font-semibold text-lg mt-4">Chat on WhatsApp</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home" class="hero-bg h-screen flex items-center relative">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="max-w-2xl" data-aos="fade-up">
+                <div class="inline-flex items-center gap-x-2 bg-white/10 backdrop-blur-md text-white text-sm font-medium px-5 py-2 rounded-3xl mb-6 border border-white/30">
+                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    NOW ACCEPTING MARCH COHORT
+                </div>
+                <h1 class="text-6xl md:text-7xl font-bold leading-none tracking-tighter text-white">
+                    Master Graphics.<br>Launch Your Freelance Empire.
+                </h1>
+                <p class="mt-8 text-xl text-slate-200 max-w-md">
+                    Nigeria-based premium design services &amp; hands-on digital skills training.<br>
+                    <span class="font-semibold text-emerald-400">Turn creativity into consistent income.</span>
+                </p>
+                <div class="mt-12 flex flex-wrap gap-4">
+                    <a href="#training" 
+                       class="bg-white text-slate-900 hover:bg-slate-100 px-10 py-5 rounded-3xl font-semibold text-lg flex items-center gap-x-3 transition-all shadow-xl shadow-emerald-500/20">
+                        Enroll Now
+                        <span class="text-2xl">→</span>
+                    </a>
+                    <a href="#portfolio" 
+                       class="border-2 border-white text-white hover:bg-white/10 px-10 py-5 rounded-3xl font-semibold text-lg transition-all">
+                        Explore Portfolio
+                    </a>
+                </div>
+                <div class="mt-16 flex items-center gap-x-12 text-white">
+                    <div class="flex items-center gap-x-6">
+                        <div class="flex -space-x-4">
+                            <img src="https://picsum.photos/id/64/48/48" alt="Student" class="w-8 h-8 rounded-2xl ring-2 ring-white object-cover">
+                            <img src="https://picsum.photos/id/201/48/48" alt="Student" class="w-8 h-8 rounded-2xl ring-2 ring-white object-cover">
+                        </div>
+                        <div>
+                            <div class="text-emerald-400 font-semibold">500+</div>
+                            <div class="text-xs tracking-widest uppercase">Trained</div>
+                        </div>
+                    </div>
+                    <div class="h-9 w-px bg-white/30"></div>
+                    <div class="flex items-center gap-x-2">
+                        <div class="flex text-amber-400">★★★★★</div>
+                        <div class="text-sm">4.98 <span class="text-slate-300">/5</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-y-2 text-white/70">
+            <div class="text-xs tracking-[3px] font-medium">SCROLL TO DISCOVER</div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-8 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-9-9m0 0L5 14" />
+            </svg>
+        </div>
+
+        <!-- Trusted by -->
+        <div class="absolute bottom-8 right-8 hidden lg:flex items-center gap-x-8 text-white/60 text-sm">
+            <div>Trusted by</div>
+            <div class="flex items-center gap-x-6 opacity-75">
+                <div class="font-semibold">Upwork</div>
+                <div class="font-semibold">Fiverr</div>
+                <div class="font-semibold">Google</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-24 bg-white dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-16 items-center">
+                <!-- Left content -->
+                <div class="md:col-span-7" data-aos="fade-right">
+                    <div class="inline-flex items-center gap-x-2 px-4 py-2 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-400 rounded-3xl text-sm font-semibold mb-6">
+                        OUR STORY
+                    </div>
+                    <h2 class="text-5xl font-semibold tracking-tight leading-none">Empowering Nigerian creatives since 2022</h2>
+                    <p class="mt-8 text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+                        DaraM Enterprises is a Nigerian-based creative powerhouse dedicated to transforming passionate individuals into professional graphic designers and successful freelancers. 
+                        We believe every Nigerian youth deserves the opportunity to earn in dollars from the comfort of their home.
+                    </p>
+                    <p class="mt-6 text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+                        From stunning brand identities to complete Upwork/Fiverr mastery — our students don’t just learn, they launch.
+                    </p>
+                    
+                    <!-- Stats -->
+                    <div class="mt-16 grid grid-cols-2 md:grid-cols-2 gap-8">
+                        <div data-aos="fade-up" data-aos-delay="100">
+                            <div class="text-6xl font-bold text-indigo-600">500+</div>
+                            <div class="text-slate-500 dark:text-slate-400 mt-1">Students trained</div>
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="200">
+                            <div class="text-6xl font-bold text-emerald-500">150+</div>
+                            <div class="text-slate-500 dark:text-slate-400 mt-1">Projects delivered</div>
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="300">
+                            <div class="text-6xl font-bold text-indigo-600">₦28M+</div>
+                            <div class="text-slate-500 dark:text-slate-400 mt-1">Earned by alumni</div>
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="400">
+                            <div class="text-6xl font-bold text-emerald-500">98%</div>
+                            <div class="text-slate-500 dark:text-slate-400 mt-1">Success rate</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team -->
+                <div class="md:col-span-5">
+                    <div class="bg-slate-100 dark:bg-slate-800 rounded-3xl p-8" data-aos="fade-left">
+                        <div class="text-sm uppercase tracking-widest font-semibold text-slate-500 mb-8">Our Core Team</div>
+                        <div class="space-y-10">
+                            <!-- Team 1 -->
+                            <div class="flex gap-6">
+                                <img src="./images/FB_IMG_1771328728740.jpg" alt="Sharon Umoh" class="w-20 h-20 rounded-2xl object-cover ring-4 ring-white dark:ring-slate-700">
+                                <div>
+                                    <div class="font-semibold">Sharon Umoh</div>
+                                    <div class="text-emerald-600 text-sm">Founder &amp; Lead Designer</div>
+                                    <div class="text-slate-500 dark:text-slate-400 text-sm mt-3 leading-relaxed">10+ years crafting brands that stand out. Passionate about helping young Nigerians go global.</div>
+                                </div>
+                            </div>
+                            <!-- Team 2 -->
+                            <div class="flex gap-6">
+                                <img src="https://picsum.photos/id/201/96/96" alt="Emem Udoh" class="w-20 h-20 rounded-2xl object-cover ring-4 ring-white dark:ring-slate-700">
+                                <div>
+                                    <div class="font-semibold">Emem Umoh</div>
+                                    <div class="text-emerald-600 text-sm">Head of Training</div>
+                                    <div class="text-slate-500 dark:text-slate-400 text-sm mt-3 leading-relaxed">Certified Adobe &amp; Figma expert. Trained over 300 students in the last 18 months.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-24 bg-slate-100 dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="inline-flex px-5 py-2 bg-white dark:bg-slate-800 rounded-3xl text-sm font-medium shadow-inner">WHAT WE OFFER</div>
+                <h2 class="text-5xl font-semibold mt-6 tracking-tight">Services that deliver results</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-xl group" data-aos="fade-up">
+                    <div class="service-icon w-16 h-16 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 rounded-2xl flex items-center justify-center mb-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M15 10l4.553-2.276L20 10V18H4V6L8.553 3.724 12 6 15.447 3.724 20 6" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M4 18h16" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold">Graphic Design</h3>
+                    <p class="mt-3 text-slate-600 dark:text-slate-400">Logos, brand kits, social media visuals, flyers, banners, UI mockups &amp; more.</p>
+                    <ul class="mt-8 space-y-3 text-sm">
+                        <li class="flex items-center gap-x-3"><span class="text-emerald-500">✓</span> Professional branding</li>
+                        <li class="flex items-center gap-x-3"><span class="text-emerald-500">✓</span> 48-hour delivery</li>
+                        <li class="flex items-center gap-x-3"><span class="text-emerald-500">✓</span> Unlimited revisions</li>
+                    </ul>
+                    <a href="#contact" class="mt-10 block w-full text-center py-4 border border-indigo-200 dark:border-indigo-800 hover:bg-indigo-50 dark:hover:bg-indigo-900/30 rounded-3xl font-medium transition">Request Design</a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-xl group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon w-16 h-16 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 rounded-2xl flex items-center justify-center mb-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M12 6v12m-3-9h6m-6 6h6" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold">Digital Skills Training</h3>
+                    <p class="mt-3 text-slate-600 dark:text-slate-400">Photoshop, Illustrator, Canva Pro, Figma — from absolute beginner to pro level.</p>
+                    <ul class="mt-8 space-y-3 text-sm">
+                        <li class="flex items-center gap-x-3"><span class="text-emerald-500">✓</span> Live classes</li>
+                        <li class="flex items-center gap-x-3"><span class="text-emerald-500">✓</span> Real client projects</li>
+                        <li class="flex items-center gap-x-3"><span class="text-emerald-500">✓</span> Certificate awarded</li>
+                    </ul>
+                    <a href="#training" class="mt-10 block w-full text-center py-4 border border-emerald-200 dark:border-emerald-800 hover:bg-emerald-50 dark:hover:bg-emerald-900/30 rounded-3xl font-medium transition">View Courses</a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-xl group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon w-16 h-16 bg-amber-100 dark:bg-amber-900/50 text-amber-600 rounded-2xl flex items-center justify-center mb-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M17 20h5v-2a3 3 0 01-5.356-1.857M17 20H7m5-2v-2c0-.656-.126-1.284-.356-1.852M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.284.356-1.852m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold">Freelance Mastery</h3>
+                    <p class="mt-3 text-slate-600 dark:text-slate-400">Profile optimization, winning proposals, client acquisition, pricing &amp; scaling to $3k+/mo.</p>
+                    <ul class="mt-8 space-y-3 text-sm">
+                        <li class="flex items-center gap-x-3"><span class="text-emerald-500">✓</span> Upwork &amp; Fiverr</li>
+                        <li class="flex items-center gap-x-3"><span class="text-emerald-500">✓</span> Proposal templates</li>
+                        <li class="flex items-center gap-x-3"><span class="text-emerald-500">✓</span> 1:1 mentorship</li>
+                    </ul>
+                    <a href="#training" class="mt-10 block w-full text-center py-4 border border-amber-200 dark:border-amber-800 hover:bg-amber-50 dark:hover:bg-amber-900/30 rounded-3xl font-medium transition">Join Mastery Program</a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-xl group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon w-16 h-16 bg-violet-100 dark:bg-violet-900/50 text-violet-600 rounded-2xl flex items-center justify-center mb-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1v-5m10-10l2 2m-2-2v10a1 1 0 01-1 1v-5m-6 0a1 1 0 001-1v5" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold">Custom Packages</h3>
+                    <p class="mt-3 text-slate-600 dark:text-slate-400">Tailored solutions for businesses, churches, events, startups &amp; personal brands.</p>
+                    <div class="mt-12 text-emerald-500 font-semibold text-sm flex items-center gap-x-2">
+                        <span>GET A QUOTE</span>
+                        <span class="flex-1 h-px bg-gradient-to-r from-emerald-400 to-transparent"></span>
+                    </div>
+                    <a href="#contact" class="mt-6 block w-full text-center py-4 bg-gradient-to-r from-violet-600 to-indigo-600 text-white rounded-3xl font-semibold">Start Custom Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <span class="text-emerald-500 font-semibold tracking-widest">SHOWCASE</span>
+                    <h2 class="text-5xl font-semibold tracking-tight">Recent Work</h2>
+                </div>
+                <a href="#" onclick="alert('Full portfolio available on request via WhatsApp')" 
+                   class="hidden md:flex items-center gap-x-3 text-sm font-medium group">
+                    VIEW ALL PROJECTS
+                    <span class="block w-8 h-px bg-slate-400 group-hover:bg-indigo-600 transition"></span>
+                </a>
+            </div>
+
+            <div id="portfolio-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" x-data="{ 
+                lightboxOpen: false, 
+                lightboxSrc: '',
+                lightboxTitle: ''
+            }">
+                <!-- Portfolio items populated below via JS but static for copy-paste -->
+                <div onclick="this.closest('#portfolio-grid')._x_dataStack[0].lightboxSrc = 'https://picsum.photos/id/1015/1200/800'; this.closest('#portfolio-grid')._x_dataStack[0].lightboxTitle = 'Tech Startup Brand Identity'; this.closest('#portfolio-grid')._x_dataStack[0].lightboxOpen = true" 
+                     class="portfolio-card bg-white dark:bg-slate-800 rounded-3xl overflow-hidden cursor-pointer">
+                    <div class="relative">
+                        <img src="https://picsum.photos/id/1015/600/420" alt="Tech Startup Brand" class="w-full h-72 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all flex items-end p-6">
+                            <div class="text-white">
+                                <div class="font-semibold text-lg">Tech Startup Brand</div>
+                                <div class="text-xs text-slate-300">Logo • Stationery • Social Kit</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="this.closest('#portfolio-grid')._x_dataStack[0].lightboxSrc = 'https://picsum.photos/id/133/1200/800'; this.closest('#portfolio-grid')._x_dataStack[0].lightboxTitle = 'Church Anniversary Flyer'; this.closest('#portfolio-grid')._x_dataStack[0].lightboxOpen = true" 
+                     class="portfolio-card bg-white dark:bg-slate-800 rounded-3xl overflow-hidden cursor-pointer">
+                    <div class="relative">
+                        <img src="https://picsum.photos/id/133/600/420" alt="Church Flyer" class="w-full h-72 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all flex items-end p-6">
+                            <div class="text-white">
+                                <div class="font-semibold text-lg">Church Anniversary</div>
+                                <div class="text-xs text-slate-300">Flyer • Banner • Social</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="this.closest('#portfolio-grid')._x_dataStack[0].lightboxSrc = 'https://picsum.photos/id/160/1200/800'; this.closest('#portfolio-grid')._x_dataStack[0].lightboxTitle = 'Fashion Brand Lookbook'; this.closest('#portfolio-grid')._x_dataStack[0].lightboxOpen = true" 
+                     class="portfolio-card bg-white dark:bg-slate-800 rounded-3xl overflow-hidden cursor-pointer">
+                    <div class="relative">
+                        <img src="https://picsum.photos/id/160/600/420" alt="Fashion Lookbook" class="w-full h-72 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all flex items-end p-6">
+                            <div class="text-white">
+                                <div class="font-semibold text-lg">Fashion Lookbook</div>
+                                <div class="text-xs text-slate-300">2025 Collection</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="this.closest('#portfolio-grid')._x_dataStack[0].lightboxSrc = 'https://picsum.photos/id/251/1200/800'; this.closest('#portfolio-grid')._x_dataStack[0].lightboxTitle = 'Restaurant Menu Design'; this.closest('#portfolio-grid')._x_dataStack[0].lightboxOpen = true" 
+                     class="portfolio-card bg-white dark:bg-slate-800 rounded-3xl overflow-hidden cursor-pointer">
+                    <div class="relative">
+                        <img src="https://picsum.photos/id/251/600/420" alt="Restaurant Menu" class="w-full h-72 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all flex items-end p-6">
+                            <div class="text-white">
+                                <div class="font-semibold text-lg">Restaurant Menu</div>
+                                <div class="text-xs text-slate-300">Naija Fusion</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="this.closest('#portfolio-grid')._x_dataStack[0].lightboxSrc = 'https://picsum.photos/id/280/1200/800'; this.closest('#portfolio-grid')._x_dataStack[0].lightboxTitle = 'Podcast Cover Art'; this.closest('#portfolio-grid')._x_dataStack[0].lightboxOpen = true" 
+                     class="portfolio-card bg-white dark:bg-slate-800 rounded-3xl overflow-hidden cursor-pointer">
+                    <div class="relative">
+                        <img src="https://picsum.photos/id/280/600/420" alt="Podcast Cover" class="w-full h-72 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all flex items-end p-6">
+                            <div class="text-white">
+                                <div class="font-semibold text-lg">Podcast Cover Series</div>
+                                <div class="text-xs text-slate-300">12 episodes</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="this.closest('#portfolio-grid')._x_dataStack[0].lightboxSrc = 'https://picsum.photos/id/315/1200/800'; this.closest('#portfolio-grid')._x_dataStack[0].lightboxTitle = 'E-commerce Product Mockups'; this.closest('#portfolio-grid')._x_dataStack[0].lightboxOpen = true" 
+                     class="portfolio-card bg-white dark:bg-slate-800 rounded-3xl overflow-hidden cursor-pointer">
+                    <div class="relative">
+                        <img src="https://picsum.photos/id/315/600/420" alt="E-commerce Mockups" class="w-full h-72 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all flex items-end p-6">
+                            <div class="text-white">
+                                <div class="font-semibold text-lg">E-commerce Mockups</div>
+                                <div class="text-xs text-slate-300">Fashion store</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div x-show="lightboxOpen" class="fixed inset-0 bg-black/95 z-[9999] flex items-center justify-center p-4" @click.self="lightboxOpen = false" style="display: none;">
+        <div class="max-w-5xl w-full relative">
+            <button @click="lightboxOpen = false" class="absolute -top-14 right-0 text-white text-5xl leading-none hover:text-emerald-400 transition">×</button>
+            <img :src="lightboxSrc" :alt="lightboxTitle" class="rounded-3xl shadow-2xl max-h-[85vh] w-full object-contain">
+            <div class="text-center text-white mt-6 text-lg font-medium" x-text="lightboxTitle"></div>
+        </div>
+    </div>
+
+    <!-- TRAINING -->
+    <section id="training" class="py-24 bg-white dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-xl mx-auto">
+                <span class="px-5 py-2 bg-emerald-100 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-400 rounded-3xl text-sm font-semibold">NEXT COHORT STARTS MARCH 10</span>
+                <h2 class="text-5xl font-semibold mt-6">Choose Your Transformation Path</h2>
+            </div>
+
+            <div class="mt-16 max-w-3xl mx-auto space-y-6" id="accordion-container">
+                <!-- Accordion Item 1 -->
+                <div class="border border-slate-200 dark:border-slate-700 rounded-3xl overflow-hidden" x-data="{ open: false }">
+                    <button @click="open = !open" class="w-full px-8 py-7 flex justify-between items-center text-left hover:bg-slate-50 dark:hover:bg-slate-800 transition">
+                        <div>
+                            <span class="font-semibold text-2xl">Beginner Graphics Mastery</span>
+                            <span class="block text-emerald-500 text-sm mt-1">4 weeks • ₦45,000</span>
+                        </div>
+                        <svg :class="{ 'rotate-180': open }" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="open" class="px-8 pb-8 text-slate-600 dark:text-slate-400">
+                        <p class="leading-relaxed">Canva + Photoshop from zero to confident. Build 10+ portfolio pieces. Live weekly classes.</p>
+                        <div class="mt-8 flex gap-4">
+                            <a href="https://wa.me/2349012345678?text=Hi%2C%20I%27m%20interested%20in%20Beginner%20Graphics%20Mastery" target="_blank" 
+                               class="flex-1 bg-emerald-600 text-white py-5 text-center rounded-3xl font-semibold">Enroll Now - ₦45,000</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accordion Item 2 -->
+                <div class="border border-slate-200 dark:border-slate-700 rounded-3xl overflow-hidden" x-data="{ open: false }">
+                    <button @click="open = !open" class="w-full px-8 py-7 flex justify-between items-center text-left hover:bg-slate-50 dark:hover:bg-slate-800 transition">
+                        <div>
+                            <span class="font-semibold text-2xl">Advanced Figma &amp; Illustrator</span>
+                            <span class="block text-emerald-500 text-sm mt-1">6 weeks • ₦75,000</span>
+                        </div>
+                        <svg :class="{ 'rotate-180': open }" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="open" class="px-8 pb-8 text-slate-600 dark:text-slate-400">
+                        <p class="leading-relaxed">Professional UI/UX, brand systems, illustration. Real client briefs &amp; portfolio review.</p>
+                        <div class="mt-8 flex gap-4">
+                            <a href="https://wa.me/2349012345678?text=Hi%2C%20I%27m%20interested%20in%20Advanced%20Figma%20%26%20Illustrator" target="_blank" 
+                               class="flex-1 bg-emerald-600 text-white py-5 text-center rounded-3xl font-semibold">Enroll Now - ₦75,000</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accordion Item 3 -->
+                <div class="border border-slate-200 dark:border-slate-700 rounded-3xl overflow-hidden" x-data="{ open: false }">
+                    <button @click="open = !open" class="w-full px-8 py-7 flex justify-between items-center text-left hover:bg-slate-50 dark:hover:bg-slate-800 transition">
+                        <div>
+                            <span class="font-semibold text-2xl">Freelance Launchpad</span>
+                            <span class="block text-emerald-500 text-sm mt-1">5 weeks • ₦65,000</span>
+                        </div>
+                        <svg :class="{ 'rotate-180': open }" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="open" class="px-8 pb-8 text-slate-600 dark:text-slate-400">
+                        <p class="leading-relaxed">Complete Upwork/Fiverr setup, proposal system, pricing strategy, client communication &amp; first $1k goal.</p>
+                        <div class="mt-8 flex gap-4">
+                            <a href="https://wa.me/2349012345678?text=Hi%2C%20I%27m%20interested%20in%20Freelance%20Launchpad" target="_blank" 
+                               class="flex-1 bg-emerald-600 text-white py-5 text-center rounded-3xl font-semibold">Enroll Now - ₦65,000</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accordion Item 4 -->
+                <div class="border border-slate-200 dark:border-slate-700 rounded-3xl overflow-hidden bg-gradient-to-br from-indigo-600 to-violet-600 text-white" x-data="{ open: false }">
+                    <button @click="open = !open" class="w-full px-8 py-7 flex justify-between items-center text-left">
+                        <div>
+                            <span class="font-semibold text-2xl">4-Week Intensive Bootcamp</span>
+                            <span class="block text-emerald-300 text-sm mt-1">₦120,000 • Limited to 12 students</span>
+                        </div>
+                        <svg :class="{ 'rotate-180': open }" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="open" class="px-8 pb-8">
+                        <p class="leading-relaxed opacity-90">Everything in one: Design + Freelancing + Portfolio + Guaranteed project. Includes lifetime community access.</p>
+                        <div class="mt-8 flex gap-4">
+                            <a href="https://wa.me/2349012345678?text=Hi%2C%20I%27d%20like%20to%20join%20the%204-Week%20Intensive%20Bootcamp" target="_blank" 
+                               class="flex-1 bg-white text-slate-900 py-5 text-center rounded-3xl font-semibold">Secure My Spot</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="py-24 bg-slate-100 dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-semibold">Real stories, real results</h2>
+            </div>
+
+            <div class="max-w-4xl mx-auto" x-data="{ current: 0 }" id="testimonial-carousel">
+                <div class="overflow-hidden rounded-3xl">
+                    <div class="flex transition-transform duration-700 ease-out" :style="{ transform: `translateX(-${current * 100}%)` }">
+                        <!-- Testimonial 1 -->
+                        <div class="min-w-full bg-white dark:bg-slate-800 p-12">
+                            <div class="flex text-amber-400 text-3xl">★★★★★</div>
+                            <p class="mt-8 text-2xl leading-tight">"DaraM changed my life. I went from unemployed to closing my first $800 client in 3 weeks after the Freelance Launchpad program. Thank you!"</p>
+                            <div class="flex items-center gap-x-4 mt-16">
+                                <img src="https://picsum.photos/id/64/80/80" alt="" class="w-14 h-14 rounded-2xl object-cover">
+                                <div>
+                                    <div class="font-semibold">Aisha Bello</div>
+                                    <div class="text-sm text-slate-500">Graphic Designer • Port Harcourt</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Testimonial 2 -->
+                        <div class="min-w-full bg-white dark:bg-slate-800 p-12">
+                            <div class="flex text-amber-400 text-3xl">★★★★★</div>
+                            <p class="mt-8 text-2xl leading-tight">"The bootcamp was intense but worth every naira. I now run my own design agency serving 7 clients monthly. The support group is still active!"</p>
+                            <div class="flex items-center gap-x-4 mt-16">
+                                <img src="https://picsum.photos/id/201/80/80" alt="" class="w-14 h-14 rounded-2xl object-cover">
+                                <div>
+                                    <div class="font-semibold">Kingsley Etim</div>
+                                    <div class="text-sm text-slate-500">Brand Designer • Uyo</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Testimonial 3 -->
+                        <div class="min-w-full bg-white dark:bg-slate-800 p-12">
+                            <div class="flex text-amber-400 text-3xl">★★★★★</div>
+                            <p class="mt-8 text-2xl leading-tight">"I learned Canva and Photoshop in just 4 weeks. Already designed for 3 churches and a restaurant. God bless DaraM team!"</p>
+                            <div class="flex items-center gap-x-4 mt-16">
+                                <img src="https://picsum.photos/id/315/80/80" alt="" class="w-14 h-14 rounded-2xl object-cover">
+                                <div>
+                                    <div class="font-semibold">Grace Akpan</div>
+                                    <div class="text-sm text-slate-500">Freelance Designer • Calabar</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <div class="flex justify-center gap-x-4 mt-12">
+                    <button @click="current = (current - 1 + 3) % 3" class="w-12 h-12 border border-slate-300 dark:border-slate-700 hover:border-indigo-500 rounded-2xl flex items-center justify-center transition">
+                        ←
+                    </button>
+                    <button @click="current = (current + 1) % 3" class="w-12 h-12 border border-slate-300 dark:border-slate-700 hover:border-indigo-500 rounded-2xl flex items-center justify-center transition">
+                        →
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-24 bg-white dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-20">
+                <!-- Form -->
+                <div>
+                    <h2 class="text-5xl font-semibold tracking-tight">Let's create something amazing together</h2>
+                    <p class="mt-4 text-slate-600 dark:text-slate-400">Fill the form or send us a message on WhatsApp</p>
+
+                    <form action="https://formspree.io/f/your@email.com" method="POST" class="mt-12 space-y-8">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Full Name</label>
+                                <input type="text" name="name" required class="w-full px-6 py-5 bg-slate-100 dark:bg-slate-800 rounded-3xl focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Phone</label>
+                                <input type="tel" name="phone" required class="w-full px-6 py-5 bg-slate-100 dark:bg-slate-800 rounded-3xl focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="+234">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Email Address</label>
+                            <input type="email" name="email" required class="w-full px-6 py-5 bg-slate-100 dark:bg-slate-800 rounded-3xl focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Service Interested In</label>
+                            <select name="service" required class="w-full px-6 py-5 bg-slate-100 dark:bg-slate-800 rounded-3xl focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                <option value="">Select service...</option>
+                                <option value="Graphics Design">Graphics Design</option>
+                                <option value="Training - Beginner">Training - Beginner Graphics</option>
+                                <option value="Training - Advanced">Training - Advanced / Freelance</option>
+                                <option value="Custom Package">Custom Package</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Message</label>
+                            <textarea name="message" rows="5" required class="w-full px-6 py-5 bg-slate-100 dark:bg-slate-800 rounded-3xl focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none"></textarea>
+                        </div>
+                        <button type="submit" 
+                                class="w-full bg-gradient-to-r from-indigo-600 to-emerald-500 text-white py-7 rounded-3xl font-semibold text-xl shadow-lg shadow-indigo-500/30 hover:brightness-110 transition">
+                            SEND MESSAGE →
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Map & Info -->
+                <div class="space-y-12">
+                    <div class="rounded-3xl overflow-hidden shadow-2xl">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.404290053062!2d5.729893314766667!3d5.575017995418221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1041ad2cc8c31dcb%3A0xbb090326ef9ea4bd!2s2%20Emmanuel%20Brume%20St%2C%20Uyo%2C%20Akwa%20Ibom%2C%20Nigeria!5e0!3m2!1sen!2sng!4v1708111223456!5m2!1sen!2sng" 
+                                width="100%" height="380" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+
+                    <div class="bg-slate-100 dark:bg-slate-800 rounded-3xl p-10">
+                        <div class="flex items-start gap-6">
+                            <div class="text-4xl">📍</div>
+                            <div>
+                                <div class="font-semibold text-lg">2, Emmanuel Brume Street Off N.P.A Express way, Warri</div>
+                                <div class="text-slate-500 dark:text-slate-400">Delta State, Nigeria</div>
+                            </div>
+                        </div>
+                        <div class="h-px bg-slate-300 dark:bg-slate-700 my-8"></div>
+                        <div class="flex items-start gap-6">
+                            <div class="text-4xl">📞</div>
+                            <div>
+                                <a href="tel:+234811098393" class="font-semibold text-lg hover:text-emerald-500">+234 811 098 393</a>
+                            </div>
+                        </div>
+                        <div class="h-px bg-slate-300 dark:bg-slate-700 my-8"></div>
+                        <div class="flex items-start gap-6">
+                            <div class="text-4xl">✉️</div>
+                            <div>
+                                <a href="mailto:emysharon158@gmail.com" class="font-semibold text-lg hover:text-emerald-500">emysharon158@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <a href="https://instagram.com/daram.ng" target="_blank" class="flex-1 h-14 bg-slate-900 hover:bg-slate-800 dark:bg-white dark:text-slate-900 rounded-3xl flex items-center justify-center text-white transition">
+                            Instagram
+                        </a>
+                        <a href="https://wa.me/234811098393?text=Hello%20DaraM%2C%20I%27m%20interested%20in%20your%20services%21" target="_blank" class="flex-1 h-14 bg-emerald-500 hover:bg-emerald-600 rounded-3xl flex items-center justify-center text-white transition font-semibold">
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-400 py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-y-12">
+                <div class="md:col-span-5">
+                    <div class="flex items-center gap-x-3 text-white">
+                        <div class="w-9 h-9 bg-gradient-to-br from-indigo-500 to-emerald-500 rounded-2xl flex items-center justify-center text-3xl">D</div>
+                        <span class="font-bold text-3xl">DaraM Enterprises</span>
+                    </div>
+                    <p class="mt-6 max-w-xs">Nigeria's leading creative training &amp; design agency. Empowering the next generation of Nigerian freelancers.</p>
+                    <div class="mt-8 text-xs">© 2026 DaraM Enterprises. All Rights Reserved.</div>
+                </div>
+
+                <div class="md:col-span-2">
+                    <div class="uppercase text-xs tracking-widest font-medium mb-6">Quick Links</div>
+                    <div class="space-y-4 text-sm">
+                        <a href="#about" class="block hover:text-white">About Us</a>
+                        <a href="#services" class="block hover:text-white">Services</a>
+                        <a href="#training" class="block hover:text-white">Training</a>
+                    </div>
+                </div>
+
+                <div class="md:col-span-2">
+                    <div class="uppercase text-xs tracking-widest font-medium mb-6">Resources</div>
+                    <div class="space-y-4 text-sm">
+                        <a href="#" class="block hover:text-white">Blog</a>
+                        <a href="#" class="block hover:text-white">Free Canva Templates</a>
+                        <a href="#" class="block hover:text-white">Student Portal</a>
+                    </div>
+                </div>
+
+                <div class="md:col-span-3">
+                    <div class="uppercase text-xs tracking-widest font-medium mb-6">Connect</div>
+                    <div class="flex gap-6 text-3xl">
+                        <a href="https://instagram.com" target="_blank" class="hover:text-white">📸</a>
+                        <a href="https://x.com" target="_blank" class="hover:text-white">𝕏</a>
+                        <a href="https://wa.me/2349012345678" target="_blank" class="hover:text-white">💬</a>
+                    </div>
+                    <div class="mt-12 text-xs leading-loose">
+                        Made with ❤️ for Nigerian creatives<br>
+                        <span class="text-emerald-400">Warri, Delta State</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <a href="#home" class="fixed bottom-8 right-8 bg-indigo-600 hover:bg-indigo-700 text-white w-14 h-14 rounded-3xl flex items-center justify-center shadow-2xl shadow-indigo-600/40 transition-all z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 10l7-7m0 0l7 7" />
+        </svg>
+    </a>
+
+    <!-- Alpine & AOS Scripts -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 900,
+            easing: 'ease-out-cubic'
+        });
+
+        // Make lightbox work even if Alpine not fully ready
+        setTimeout(() => {
+            const grid = document.getElementById('portfolio-grid');
+            if (grid) grid._x_dataStack = [{ lightboxOpen: false, lightboxSrc: '', lightboxTitle: '' }];
+        }, 800);
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.store('lightbox', {
+            isOpen: false,
+            src: '',
+            title: '',
+            open(src, title) {
+                this.src = src
+                this.title = title
+                this.isOpen = true
+            },
+            close() {
+                this.isOpen = false
+                // Optional: delay clearing to avoid flicker
+                setTimeout(() => {
+                    this.src = ''
+                    this.title = ''
+                }, 300)
+            }
+        })
+    })
+
+    AOS.init({
+        once: true,
+        duration: 900,
+        easing: 'ease-out-cubic'
+    })
+</script>
+</body>
+</html>
